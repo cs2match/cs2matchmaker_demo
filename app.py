@@ -1,47 +1,80 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistrationForm
-
-import uuid
-uuuu = uuid.uuid4()
+from flask import Flask, jsonify, request
+import uuid, json
+import re, os
 
 app = Flask(__name__)
+
+uuuu = uuid.uuid4()
 app.config['SECRET_KEY'] = str(uuuu)
 
-student_data = {
-    1: {"name": "슈퍼맨", "score": {"국어": 90, "수학": 65}},
-    2: {"name": "배트맨", "score": {"국어": 75, "영어": 80, "수학": 75}}
-}
+STUDENTS_JSON_PATH = os.path.join(os.path.dirname(__file__), "templates", "students.json")
 
-@app.route("/")
-def index():
-   return render_template("index.html", template_students = student_data)
-def home():
-    return render_template('layout.html')
+def load_students_data():
+    with open(STUDENTS_JSON_PATH, encoding="utf-8") as f:
+        data = json.load(f)
+    return data
 
-@app.route("/register", methods=["GET", "POST"])
+@app.route("/students", methods=["GET"])
+def get_students():
+    data = load_students_data()
+    return jsonify(data["students"])
+
+@app.route("/students/list", methods=["GET"])
+def get_students_list():
+    data = load_students_data()
+    # students 배열만 반환
+    return jsonify({"students": data.get("students", [])})
+
+@app.route("/students/<int:student_id>", methods=["GET"])
+def get_student_by_id(student_id):
+    data = load_students_data()
+    students = data.get("students", [])
+    for student in students:
+        if student["id"] == student_id:
+            return jsonify(student)
+    return jsonify({"error": "학생이 존재하지 않습니다."}), 404
+
+def validate_registration(data):
+    errors = {}
+    username = data.get('username')
+    if not username or not (4 <= len(username) <= 20):
+        errors['username'] = "아이디는 4~20자여야 합니다."
+    email = data.get('email')
+    if not email or not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+        errors['email'] = "올바른 이메일 형식이 아닙니다."
+    password = data.get('password')
+    if not password or not (4 <= len(password) <= 20):
+        errors['password'] = "비밀번호는 4~20자여야 합니다."
+    confirm_password = data.get('confirm_password')
+    if password != confirm_password:
+        errors['confirm_password'] = "비밀번호가 일치하지 않습니다."
+    return errors
+
+@app.route("/register", methods=["POST"])
 def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'{form.username.data} 님 가입 완료!', 'success')
-        return redirect(url_for('home'))
-    return render_template('register.html',form=form)
-@app.route("/student/<int:id>")
-def student(id):
-    return render_template("student.html",
-                           template_name = student_data[id]["name"],
-                           template_score = student_data[id]["score"])
+    data = request.json
+    errors = validate_registration(data)
+    if errors:
+        return jsonify({"success": False, "errors": errors}), 400
+    return jsonify({"success": True, "message": f"{data['username']} 님 가입 완료!"})
 
-@app.route("/index")
+@app.route("/home", methods=["GET"])
+def home():
+    return jsonify({"message": "This is the home page."})
+
+@app.route("/index", methods=["GET"])
 def hello_world():
-    return f"Hello World!_index, {uuuu}"
+    return jsonify({"message": "Hello World!_index", "uuid": str(uuuu)})
 
-@app.route('/user/<user_name>/<int:user_id>/<uuid:same_uuid>')
+@app.route('/user/<user_name>/<int:user_id>/<uuid:same_uuid>', methods=["GET"])
 def user(user_name, user_id, same_uuid):
     if uuuu == same_uuid:
-        return f'hello, {user_name}({user_id}),{uuuu}'
+        return jsonify({
+            "message": f"hello, {user_name}({user_id})",
+            "uuid": str(uuuu)
+        })
     else:
-        return 'Access Denied: Invalid UUID.',403
-
+        return jsonify({"error": "Access Denied: Invalid UUID."}), 403
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
