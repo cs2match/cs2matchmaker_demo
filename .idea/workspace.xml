@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="EDIT: frontend -&gt; react, backend -&gt; flask 환경 구축">
+      <change afterPath="$PROJECT_DIR$/cs2matchmaker/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs2matchmaker/backend/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs2matchmaker/backend/venv/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="package.json" />
         <option value="HTTP Request" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -63,7 +68,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/jyj36/IdeaProjects/Flask_test_world",
     "node.js.detected.package.eslint": "true",
@@ -77,7 +82,7 @@
     "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.1484716",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -92,14 +97,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\backend" />
       <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\frontend" />
       <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker_backend" />
       <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker" />
       <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\react" />
-      <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\src\assets" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager">
     <configuration name="renders learn react link (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/cs2matchmaker/frontend/node_modules/react-scripts" />
@@ -124,6 +129,29 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Flask_test_world" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/cs2matchmaker/backend/venv/Scripts/activate" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cs2matchmaker/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cs2matchmaker/backend/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/cs2matchmaker/frontend/package.json" />
       <command value="run" />
@@ -137,6 +165,7 @@
     <list>
       <item itemvalue="Jest.renders learn react link (1)" />
       <item itemvalue="npm.start" />
+      <item itemvalue="Python.app" />
     </list>
     <recent_temporary>
       <list>
@@ -170,7 +199,7 @@
       <workItem from="1752523083417" duration="301000" />
       <workItem from="1752553201092" duration="6434000" />
       <workItem from="1752820473513" duration="4034000" />
-      <workItem from="1752824792206" duration="905000" />
+      <workItem from="1752824792206" duration="2958000" />
     </task>
     <task id="LOCAL-00001" summary="EDIT: HTML -&gt; JSON 형식으로 수정">
       <option name="closed" value="true" />
@@ -188,7 +217,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752825163304</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="EDIT: frontend -&gt; react, backend -&gt; flask 환경 구축">
+      <option name="closed" value="true" />
+      <created>1752825882853</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752825882853</updated>
+    </task>
+    <task id="LOCAL-00004" summary="EDIT: frontend -&gt; react, backend -&gt; flask 환경 구축">
+      <option name="closed" value="true" />
+      <created>1752827709948</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752827709948</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
