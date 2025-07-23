@@ -1,0 +1,220 @@
+#!C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\backend\venv\Scripts\python.exe
+# -*- coding: utf-8 -*-
+# Copyright (c) 2012 Ciaran Farrell <cfarrell1980@gmail.com>
+# This file is part of the termine package. You can find the
+# source (python) of termine at http://bitbucket.org/cfarrell1980/termine/
+# This file (and the rest of termine) is licensed under the MIT license. You
+# can find the text of this license in the LICENSE.txt file distributed with
+# termine. Alternatively, you can read the license online in the bitbucket
+# repository at the following URL:
+# https://bitbucket.org/cfarrell1980/termine/raw/ddf534649df6/LICENSE.txt
+
+from termine.gwise import Groupwise,CONFIGFILE,initialConfig
+from termine.gwexceptions import *
+from termine.views import *
+from getpass import getuser,getpass
+from termine.genericlogger import logger
+from termine.genericargparse import parser as parentparser
+
+import sys,logging,ConfigParser,argparse,re
+action = None # used to determine which subcommand action to follow
+config = ConfigParser.SafeConfigParser()
+if not os.path.isfile(CONFIGFILE):
+  initialConfig(CONFIGFILE)
+config.read(CONFIGFILE)
+try:
+  defaultwindow = config.get('Global','defaultwindow')
+except Exception,e:
+  raise GWConfigFileException, 'You should remove %s and re-run the script'%CONFIGFILE
+
+termine_desc = '''termine is a command line program that uses the Groupwise
+SOAP API to connect to your Groupwise server and retrieve your appointments'''
+termine_prog = 'termine'
+help_window = '''the range of appointments. Choose from 'today', 'tomorrow',
+'thisweek' or create your own windows in filters.py'''
+help_show = '''if you know the Groupwise id of an appointment (run termine list
+--with-id to show the ids), you can add it as an argument here to get full and
+detailed information about the appointment'''
+help_withid = '''Use this boolean option to show the Groupwise id for each
+appointment in the output. This is useful if you want to copy and paste the id
+into the show subcommand'''
+help_withfullid='''Groupwise ids tend to be a long string with lots of dots. By
+splitting the string on the dots we get a list of which elements 0 and 6 tend to
+be unique. Essentially, it looks as though the uniqueness of a Groupwise id is
+completely made up of these two string subcomponents. However, for absolute
+certainty, use this option to display the full (long) id in the output of the
+list command'''
+help_busy='''By entering the email addresses of Groupwise users you can query
+their availability. This is known as a 'busy search' in Groupwise itself'''
+parser = argparse.ArgumentParser(parents=[parentparser],
+          description=termine_desc,
+          prog=termine_prog)
+subparsers = parser.add_subparsers(help='sub-command help')
+tlist = subparsers.add_parser('list', help='List your appointments')
+tlist.add_argument('window', nargs='?',
+                    help=help_window,default=defaultwindow)
+tlist.add_argument('-l', '--with-id',dest='withid',help=help_withid,default=False,
+                    action='store_true')
+tlist.add_argument('-a','--with-fullid',dest='withfullid',help=help_withfullid,
+                    default=False,action='store_true')
+tshow = subparsers.add_parser('show', help='Show a particular appointment')
+tshow.add_argument('id', nargs='?', help=help_show)
+tbusy = subparsers.add_parser('busy', help='Perform a busy search')
+tbusy.add_argument('recip', nargs='*', help=help_busy)
+
+args = parser.parse_args()
+
+if not args.verbose:
+  logger.setLevel(logging.ERROR)
+else:
+  if args.verbose == 1:
+    logger.setLevel(logging.WARNING)
+  elif args.verbose == 2:
+    logger.setLevel(logging.INFO)
+  elif args.verbose >= 3:
+    logger.setLevel(logging.DEBUG)
+
+logger.debug('parsed --verbose to be %s'%args.verbose)
+logger.debug('parsed --format to be %s'%args.format)
+logger.debug('parsed --force-login to be %s'%args.forcelogin)
+if hasattr(args,'window'):
+  logger.debug('parsed window to be %s'%args.window)
+  action='list'
+elif hasattr(args,'id'):
+  logger.debug('parsed id to be %s'%args.id)
+  action='show'
+elif hasattr(args,'recip'):
+  logger.debug('parsed recip to be %s'%args.recip)
+  action = 'busy'
+else:
+  # this will probably never be reached as the parser will catch the error
+  parser.error('Could not determine whether you want to show or list')
+
+ok=False
+fl = args.forcelogin
+while not ok: # loop is because user may not be authenticated
+  if action=='list':
+    logger.debug('action is list')
+    w_id,w_fid = args.withid,args.withfullid
+    if w_fid: w_id = True
+    try:
+      gw = Groupwise(fl=fl)
+      soapstring = gw.getAppointments(window=args.window)
+    except GWForceLoginException,e:
+      logger.warn(str(e))
+      logger.debug('Setting fl to False to avoid loop')
+      fl = False
+    except GWInitException,e:
+      logger.warn(str(e))
+    except GWSessionException,e:
+      logger.warn(str(e))
+    except GWFatalException,e:
+      logger.error(str(e))
+      sys.exit(1)
+    else:
+      m = {'raw':GWView,
+          'json':GWJSONView,
+          'html':GWHTMLView,}
+      try:
+        view = m[args.format](soapstring,id=w_id,fullid=w_fid)
+      except KeyError:
+        sys.stderr.write('Did not recognize format %s\n'%args.format)
+        sys.exit(1) # no point in looping here
+      except GWConfigFileException,e:
+        sys.stderr.write("%s\n"%str(e))
+        sys.exit(1) # no point in looping
+      except Exception,e:
+        sys.stderr.write("%s\n"%str(e))
+        sys.exit(1) # get out - something went wrong
+      else:
+        view.render()
+        ok=True
+  elif action == 'busy':
+    logger.debug('action is busy')
+    try:
+      gw = Groupwise(fl=fl)
+    except GWForceLoginException,e:
+      logger.warn(str(e))
+      logger.debug('Setting fl to False to avoid loop')
+      fl = False
+    except Exception,e: # todo add the exceptions for login
+      raise
+      sys.exit(1)
+    else:
+      if not len(args.recip):
+        logger.debug('Exiting as no recipients sent')
+        sys.stderr.write('You must provide at least one user to busy search\n')
+        sys.exit(1)
+      else:
+        who = []
+        for recip in args.recip:
+          if '@' in recip:
+            logger.warn('Detected email address style user %s. Stripping...'%recip)
+            who.append(recip.split('@')[0])
+          else:
+            who.append(recip)
+      if not len(who): # TODO: perhaps get _this_ user's busy times?
+        sys.stderr.write('You need to provide at least one user to busy search\n')
+        sys.exit(1)
+      udict = gw.getUserList(who)
+      if not len(udict.keys()):
+        sys.stderr.write('None of the users requested were found in the Groupwise Address Book\n')
+        sys.exit(1)
+      for uname in who:
+        if not udict.has_key(uname):
+          logger.warn('Requested user %s not included in dictionary'%uname)
+        else:
+          if not udict[uname]['uuid']:
+            logger.warn('Requested user %s not found on Groupwise server'%uname)
+          else:
+            try:
+              bs = gw.getBusyTimeRequestId(udict)
+            except Exception,e:
+              print e
+            else:
+              try:
+                bt = gw.getBusyTimes(bs)
+              except Exception,e:
+                raise
+              else:
+                f = "%Y-%m-%d %H:%M"
+                print "The following time slots are available:"
+                for x in bt:
+                  print "%s until %s"%(x[0].strftime(f),x[1].strftime(f))
+                exit()
+    ok = True
+  else:
+    logger.debug('action is show')
+    if not args.id:
+      sys.stderr.write("You need to specify one meeting URI (termine list -l)\n")
+      sys.exit(1)
+    try:
+      gw = Groupwise(fl=fl)
+      cache = GWIdCache()
+      try:
+        expanded = cache.expand(args.id)
+      except:
+        expanded = args.id
+      try:
+        soapstring = gw.getItemRequest(expanded)
+      except GWItemFetchException,e:
+        sys.stderr.write("%s\n"%str(e))
+        sys.exit(1)
+    except GWForceLoginException,e:
+      logger.warn(str(e))
+      logger.debug('Setting fl to False to avoid loop')
+      fl = False
+    except Exception,e:
+      print dir(e)
+      print e.object,e.reason
+      sys.exit(1)
+    else:
+      try:
+        view = GWAppointmentView(soapstring)
+      except Exception,e:
+        print e
+        exit()
+      else:
+        view.render()
+      ok=True
+
