@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="EDIT: frontend -&gt; react, backend -&gt; flask 환경 구축">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Flask_test_world.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Flask_test_world.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs2matchmaker/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/venv/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/extensions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +46,12 @@
     &quot;assignee&quot;: &quot;Grrrrra&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Grrrrra/cs2matchmaker_test.git",
-    "accountId": "c44eb2aa-073f-4ccc-8677-6b8e285c45ef"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Grrrrra/cs2matchmaker_test.git&quot;,
+    &quot;accountId&quot;: &quot;c44eb2aa-073f-4ccc-8677-6b8e285c45ef&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/cs2matchmaker/backend/venv/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/cs2matchmaker/backend/venv/Lib/site-packages/users/__init__.py" root0="FORCE_HIGHLIGHTING" />
@@ -106,7 +100,8 @@
     &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.1484716&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -128,14 +123,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\backend\certs" />
       <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\backend" />
       <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker" />
       <recent name="C:\Users\jyj36\AppData\Roaming\JetBrains\PyCharm2025.1\extensions\com.intellij.database" />
       <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\frontend" />
-      <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker_backend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flask 서버.Flask">
     <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/cs2matchmaker/frontend/node_modules/react-scripts" />
@@ -148,27 +143,19 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="Flask" type="Python.FlaskServer" nameIsGenerated="true">
       <module name="Flask_test_world" />
-      <option name="ENV_FILES" value="$PROJECT_DIR$/cs2matchmaker/backend/venv/Scripts/activate" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/cs2matchmaker/.env" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cs2matchmaker/backend" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_NAME" value="Python 3.13 virtualenv at C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\backend\venv" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\backend" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cs2matchmaker/backend/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -182,9 +169,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Flask 서버.Flask" />
       <item itemvalue="Jest.renders learn react link" />
       <item itemvalue="npm.start" />
-      <item itemvalue="Python.app" />
     </list>
     <recent_temporary>
       <list>
@@ -220,7 +207,8 @@
       <workItem from="1752824792206" duration="5202000" />
       <workItem from="1752998573463" duration="12281000" />
       <workItem from="1753249398085" duration="2610000" />
-      <workItem from="1753259646668" duration="3624000" />
+      <workItem from="1753259646668" duration="6501000" />
+      <workItem from="1753266561976" duration="516000" />
     </task>
     <task id="LOCAL-00001" summary="EDIT: HTML -&gt; JSON 형식으로 수정">
       <option name="closed" value="true" />
@@ -262,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752828947017</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="EDIT: frontend -&gt; react, backend -&gt; flask 환경 구축">
+      <option name="closed" value="true" />
+      <created>1753263363010</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753263363010</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +272,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Flask_test_world$Flask.coverage" NAME="Flask 커버리지 결과" MODIFIED="1751946730369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Flask_test_world$users.coverage" NAME="users 커버리지 결과" MODIFIED="1752830360614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
+    <SUITE FILE_PATH="coverage/ca_pem$Flask.coverage" NAME="Flask 커버리지 결과" MODIFIED="1753267080476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\backend" />
     <SUITE FILE_PATH="coverage/Flask_test_world$test.coverage" NAME="test 커버리지 결과" MODIFIED="1751989034265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Flask_test_world$app.coverage" NAME="app 커버리지 결과" MODIFIED="1753261435129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
+    <SUITE FILE_PATH="coverage/ca_pem$app.coverage" NAME="app 커버리지 결과" MODIFIED="1753266785344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
+    <SUITE FILE_PATH="coverage/Flask_test_world$app.coverage" NAME="app 커버리지 결과" MODIFIED="1753265293602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
   </component>
 </project>

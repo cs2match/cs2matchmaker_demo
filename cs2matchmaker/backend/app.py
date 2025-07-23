@@ -1,7 +1,11 @@
 #app.py
+import os
+
+import jwt
 from flask import Flask
 from config import Config
-from extensions import db, jwt
+
+from cs2matchmaker.backend import db, jwt
 from routes.user_routes import user_bp
 from flask_cors import CORS
 
@@ -29,5 +33,8 @@ def create_app():
 
 # 실행
 if __name__ == '__main__':
+    print("Loading SSL CA file from:", os.getenv('DB_SSL_CA'))
+    print("Full DB URI:", Config.SQLALCHEMY_DATABASE_URI)
+
     app = create_app()
     app.run(debug=True)
