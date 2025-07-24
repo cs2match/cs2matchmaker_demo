@@ -47,9 +47,10 @@ jsonschema-specifications
 SQLAlchemy
 Flask-JWT-Extended
 flask-cors
-django-email-users
 python-dotenv
 typing_extensions
 fedora_messaging
 anitya_schema
+pymorphous
+PyMySQL
 pyasn1_modules

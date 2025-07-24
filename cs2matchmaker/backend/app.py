@@ -6,6 +6,7 @@ from flask import Flask
 from config import Config
 
 from cs2matchmaker.backend import db, jwt
+from routes.auth_routes import auth_bp
 from routes.user_routes import user_bp
 from flask_cors import CORS
 
@@ -20,21 +21,17 @@ def create_app():
 
     # 블루프린트 등록
     app.register_blueprint(user_bp)
-
-    with app.app_context():
-        from models.member import Member
-        db.create_all()
+    app.register_blueprint(auth_bp)
 
     @app.route("/")
     def index():
         return "✅ Flask + TiDB + SQLAlchemy 연결 OK!"
-
     return app
 
 # 실행
 if __name__ == '__main__':
-    print("Loading SSL CA file from:", os.getenv('DB_SSL_CA'))
-    print("Full DB URI:", Config.SQLALCHEMY_DATABASE_URI)
+    print("Loading SSL CA file from:", os.getenv('DB_SSL_CA')) #임시 테스트 확인용
+    print("Full DB URI:", Config.SQLALCHEMY_DATABASE_URI) #임시 테스트 확인용
 
     app = create_app()
     app.run(debug=True)

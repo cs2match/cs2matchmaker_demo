@@ -1,5 +1,6 @@
-from extensions import db
+from cs2matchmaker.backend.extensions import db
 from datetime import date
+
 
 class Member(db.Model):
     __tablename__ = 'members'
@@ -16,5 +17,5 @@ class Member(db.Model):
     age = db.Column(db.Integer, default=0)
     available_maps = db.Column(db.String(255))
     preferred_modes = db.Column(db.String(255))
-    updated_at = db.Column(db.Date, default=date.today)
-    joined_at = db.Column(db.Date, default=date.today)
+    updated_at = db.Column(db.Date, default=lambda: date.today())
+    joined_at = db.Column(db.Date, default=lambda: date.today())
