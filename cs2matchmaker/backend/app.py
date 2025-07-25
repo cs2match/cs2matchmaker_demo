@@ -6,8 +6,10 @@ from flask import Flask
 from config import Config
 
 from cs2matchmaker.backend import db, jwt
+
 from routes.auth_routes import auth_bp
 from routes.user_routes import user_bp
+from routes.userlist_routes import userlist_bp
 from flask_cors import CORS
 
 def create_app():
