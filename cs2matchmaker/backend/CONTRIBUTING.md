@@ -4,7 +4,7 @@
 from routes.auth_routes import auth_bp
 from routes.user_routes import user_bp
 ```
-#### 상위 폴더에 존재하는 파일은 무조건 절대경로로 작성바랍니다.
+#### 2. 상위 폴더에 존재하는 파일은 무조건 절대경로로 작성바랍니다.
 ```python
 from cs2matchmaker.backend.models.player import Member
 from cs2matchmaker.backend.extensions import db
