@@ -1,12 +1,12 @@
 #init.py
-from flask import Flask, Response
+from flask import Flask
 
-from cs2matchmaker.backend.config import Config
-from cs2matchmaker.backend.extensions import db, jwt
-from cs2matchmaker.backend.routes.user_routes import user_bp
-from cs2matchmaker.backend.routes.auth_routes import auth_bp
-from cs2matchmaker.backend.routes.userlist_routes import userlist_bp
-from cs2matchmaker.backend.routes.chat_routes import chat_bp
+from .config import Config
+from .extensions import db, jwt
+from .routes.user_routes import user_bp
+from .routes.auth_routes import auth_bp
+from .routes.userlist_routes import userlist_bp
+from .routes.chat_routes import chat_bp
 
 from flask_cors import CORS
 from flask_sse import sse  #sse 통신 프로토콜

@@ -7,13 +7,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="test : app.py 테스트 성공 (원인 가상환경 주소 오류)">
+    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="feat : 채팅 기능 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +224,7 @@
       <workItem from="1753790245570" duration="8000" />
       <workItem from="1754233686950" duration="2785000" />
       <workItem from="1754247654553" duration="8140000" />
-      <workItem from="1754281961819" duration="3858000" />
+      <workItem from="1754281961819" duration="6623000" />
     </task>
     <task id="LOCAL-00001" summary="EDIT: HTML -&gt; JSON 형식으로 수정">
       <option name="closed" value="true" />
@@ -350,7 +346,31 @@
       <option name="project" value="LOCAL" />
       <updated>1754283162521</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="chore : 패키지 확장">
+      <option name="closed" value="true" />
+      <created>1754285920132</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1754285920132</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor : init 코드 개선 (중복코드 제거)">
+      <option name="closed" value="true" />
+      <created>1754285974357</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1754285974357</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat : 채팅 기능 구현">
+      <option name="closed" value="true" />
+      <created>1754286004719</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1754286004719</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +398,10 @@
     <MESSAGE value="docs : RE&#10; ADME.MD 내용 추가, 규약 추가" />
     <MESSAGE value="chore : 패키지랑 환경설정 변경 &#10;ci : 패키지 최적화" />
     <MESSAGE value="test : app.py 테스트 성공 (원인 가상환경 주소 오류)" />
-    <option name="LAST_COMMIT_MESSAGE" value="test : app.py 테스트 성공 (원인 가상환경 주소 오류)" />
+    <MESSAGE value="chore : 패키지 확장" />
+    <MESSAGE value="refactor : init 코드 개선 (중복코드 제거)" />
+    <MESSAGE value="feat : 채팅 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 채팅 기능 구현" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Flask_test_world$Flask.coverage" NAME="Flask 커버리지 결과" MODIFIED="1751946730369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -386,7 +409,7 @@
     <SUITE FILE_PATH="coverage/ca_pem$Flask__venv_Scripts_python_exe_.coverage" NAME="Flask (venv/Scripts/python.exe) 커버리지 결과" MODIFIED="1754284683596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
     <SUITE FILE_PATH="coverage/ca_pem$Flask.coverage" NAME="Flask (venv/Scripts/python.exe) 커버리지 결과" MODIFIED="1754255594387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
     <SUITE FILE_PATH="coverage/Flask_test_world$test.coverage" NAME="test 커버리지 결과" MODIFIED="1751989034265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ca_pem$app.coverage" NAME="app 커버리지 결과" MODIFIED="1754285754464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
+    <SUITE FILE_PATH="coverage/ca_pem$app.coverage" NAME="app 커버리지 결과" MODIFIED="1754288142195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
     <SUITE FILE_PATH="coverage/Flask_test_world$app.coverage" NAME="app 커버리지 결과" MODIFIED="1753265293602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
   </component>
 </project>
