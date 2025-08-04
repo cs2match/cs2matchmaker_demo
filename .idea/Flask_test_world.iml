@@ -3,11 +3,10 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Remote Python 3.10.12 (sftp://ubuntu@158.180.78.211:22/home/ubuntu/.virtualenvs/Flask_test_world/bin/python)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PackageRequirementsSettings">
-    <option name="versionSpecifier" value="버전 지정 안 함" />
     <option name="removeUnused" value="true" />
   </component>
 </module>

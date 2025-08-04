@@ -1,8 +1,5 @@
-
 from flask import Blueprint, request, jsonify
-from cs2matchmaker.backend.extensions import db
 from cs2matchmaker.backend.models.player import Member  # 혹은 환경에 맞는 모델 import
-import datetime
 
 userlist_bp = Blueprint('userlist', __name__, url_prefix='/')
 

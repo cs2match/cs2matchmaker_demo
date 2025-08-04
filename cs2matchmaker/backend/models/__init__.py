@@ -1,1 +1,1 @@
-from cs2matchmaker.backend.models.player import Member
+from .player import Member

@@ -1,7 +1,9 @@
 from flask import Flask
+
+from cs2matchmaker.backend.config import Config
 from cs2matchmaker.backend.extensions import db, jwt
 from cs2matchmaker.backend.routes.user_routes import user_bp
-from cs2matchmaker.backend.config import Config
+
 
 def create_app():
     app = Flask(__name__)
