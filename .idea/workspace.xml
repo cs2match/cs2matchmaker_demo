@@ -7,18 +7,13 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="docs : RE&#10; ADME.MD 내용 추가, 규약 추가">
-      <change beforePath="$PROJECT_DIR$/.idea/Flask_test_world.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Flask_test_world.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="test : app.py 테스트 성공 (원인 가상환경 주소 오류)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/userlist_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/userlist_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,22 +141,28 @@
       <recent name="C:\Users\jyj36\IdeaProjects\Flask_test_world\cs2matchmaker\frontend" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Flask (venv/Scripts/python.exe)" type="Python.FlaskServer" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_test_world" />
-      <option name="target" value="$PROJECT_DIR$/cs2matchmaker/backend/venv/Scripts/python.exe" />
-      <option name="targetType" value="PATH" />
-      <option name="ENV_FILES" value="$PROJECT_DIR$/cs2matchmaker/.env" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.13" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cs2matchmaker/backend" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cs2matchmaker/backend/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -175,11 +176,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Flask 서버.Flask (venv/Scripts/python.exe)" />
       <item itemvalue="npm.start" />
+      <item itemvalue="Python.app" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -226,7 +228,7 @@
       <workItem from="1753790245570" duration="8000" />
       <workItem from="1754233686950" duration="2785000" />
       <workItem from="1754247654553" duration="8140000" />
-      <workItem from="1754281961819" duration="747000" />
+      <workItem from="1754281961819" duration="3858000" />
     </task>
     <task id="LOCAL-00001" summary="EDIT: HTML -&gt; JSON 형식으로 수정">
       <option name="closed" value="true" />
@@ -332,7 +334,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753555342748</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="chore : 패키지랑 환경설정 변경 &#10;ci : 패키지 최적화">
+      <option name="closed" value="true" />
+      <created>1754283061142</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1754283061142</updated>
+    </task>
+    <task id="LOCAL-00015" summary="test : app.py 테스트 성공 (원인 가상환경 주소 오류)">
+      <option name="closed" value="true" />
+      <created>1754283162521</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1754283162521</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,14 +376,17 @@
     <MESSAGE value="add : api 명세 추가 (작성한 것만)&#10;&#10;fix: ORM 모델 중복 정의 오류 수정&#10;- 모델 임포트 구조 개선으로 중복 선언 방지&#10;- 앱 컨텍스트 내에서 db.create_all() 한 번만 호출하도록 수정&#10;- 순환 임포트 문제 해결로 테이블 재등록 제거" />
     <MESSAGE value="docs : README.MD 내용 추가, 규약 추가" />
     <MESSAGE value="docs : RE&#10; ADME.MD 내용 추가, 규약 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs : RE&#10; ADME.MD 내용 추가, 규약 추가" />
+    <MESSAGE value="chore : 패키지랑 환경설정 변경 &#10;ci : 패키지 최적화" />
+    <MESSAGE value="test : app.py 테스트 성공 (원인 가상환경 주소 오류)" />
+    <option name="LAST_COMMIT_MESSAGE" value="test : app.py 테스트 성공 (원인 가상환경 주소 오류)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Flask_test_world$Flask.coverage" NAME="Flask 커버리지 결과" MODIFIED="1751946730369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Flask_test_world$users.coverage" NAME="users 커버리지 결과" MODIFIED="1752830360614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
+    <SUITE FILE_PATH="coverage/ca_pem$Flask__venv_Scripts_python_exe_.coverage" NAME="Flask (venv/Scripts/python.exe) 커버리지 결과" MODIFIED="1754284683596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
     <SUITE FILE_PATH="coverage/ca_pem$Flask.coverage" NAME="Flask (venv/Scripts/python.exe) 커버리지 결과" MODIFIED="1754255594387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
     <SUITE FILE_PATH="coverage/Flask_test_world$test.coverage" NAME="test 커버리지 결과" MODIFIED="1751989034265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ca_pem$app.coverage" NAME="app 커버리지 결과" MODIFIED="1754281979786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
+    <SUITE FILE_PATH="coverage/ca_pem$app.coverage" NAME="app 커버리지 결과" MODIFIED="1754285754464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
     <SUITE FILE_PATH="coverage/Flask_test_world$app.coverage" NAME="app 커버리지 결과" MODIFIED="1753265293602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
   </component>
 </project>
