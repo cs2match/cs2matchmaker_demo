@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="test@gateway01.ap-northeast-1.prod.aws.tidbcloud.com" uuid="e523a13f-7942-433e-a3e0-249f4f90802b">
-      <driver-ref>tidb</driver-ref>
+    <data-source source="LOCAL" name="@158.180.78.211" uuid="e523a13f-7942-433e-a3e0-249f4f90802b">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://gateway01.ap-northeast-1.prod.aws.tidbcloud.com:4000/test</jdbc-url>
+      <jdbc-url>jdbc:mysql://158.180.78.211:3306/</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
