@@ -17,31 +17,40 @@ def get_user_list():
     map_selection = data.get("map_selection")
     mode_preference = data.get("mode_preference")
     age = data.get("age")
-    
-# 쿼리 빌드
+
+    # 타입 변환
+    if rating_min is not None:
+        rating_min = int(rating_min)
+    if rating_max is not None:
+        rating_max = int(rating_max)
+    if age is not None:
+        age = int(age)
+
+    # 쿼리 빌드
     query = db.session.query(Member)
 
-#레이팅 필터
+    # 레이팅 필터
     if rating_min is not None and rating_max is not None:
         query = query.filter(Member.premier_rating.between(rating_min, rating_max))
 
-    #맵 필터
+    # 맵 필터
     if map_selection:
         map_conditions = [Member.available_maps.like(f"%{m}%") for m in map_selection]
         query = query.filter(or_(*map_conditions))
-    #모드 필터
-    if mode_preference:
 
+    # 모드 필터
+    if mode_preference:
         mode_conditions = [Member.preferred_modes.like(f"%{m}%") for m in mode_preference]
         query = query.filter(or_(*mode_conditions))
-    #나이 필터
+
+    # 나이 필터
     if age:
         query = query.filter(Member.age == age)
-    #서버 필터    
+
+    # 서버 필터
     if server:
         query = query.filter(Member.server == server)
-        
+
     users = query.all()
-    
-     return jsonify([as_user_dict(u) for u in users]), 200
-     
+
+    return jsonify([u.serialize() for u in users]), 200

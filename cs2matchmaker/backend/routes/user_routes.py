@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify, request
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
-from cs2matchmaker.backend.models.player import Member
-from cs2matchmaker.backend.extensions import db
+from models.player import Member
+from extensions import db
 from datetime import datetime, timezone
 
 user_bp = Blueprint('user', __name__, url_prefix='/user')
