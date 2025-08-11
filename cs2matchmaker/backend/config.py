@@ -1,17 +1,18 @@
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 class Config:
-    # SSL CA 경로는 OS에 따라 구분자로 안전하게 변환
-    ssl_ca_path = os.getenv('DB_SSL_CA', '')
-    if ssl_ca_path:
-        ssl_ca_path = os.path.normpath(ssl_ca_path)
+    db_name = os.getenv('DB_NAME')  # None이면 DB명 없이 접속
+    if db_name:
+        db_name_part = f"/{db_name}"
+    else:
+        db_name_part = ""  # DB명 없이 접속
 
     SQLALCHEMY_DATABASE_URI = (
         f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
-        f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT', '4000')}/{os.getenv('DB_NAME')}"
-        f"?ssl_ca={ssl_ca_path}"
+        f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT', '3306')}{db_name_part}"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
