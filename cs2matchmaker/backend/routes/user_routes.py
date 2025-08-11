@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify, request
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
-from models.player import Member
-from extensions import db
+from ..models.player import Member
+from ..extensions import database
 from datetime import datetime, timezone
 
 user_bp = Blueprint('user', __name__, url_prefix='/user')
@@ -19,6 +19,7 @@ def get_user(user_id):
         "premier_rating": user.premier_rating,
         # etc.
     }), 200
+
 #유저정보를 갱신 API (단 해당 유저일 경우에만 사용할 수 있게하기) : 토큰 확인 후 본인일 경우에만 가능
 @user_bp.route('/<int:user_id>', methods=['PUT'])
 @jwt_required()
@@ -45,7 +46,7 @@ def update_user(user_id):
         user.preferred_modes = ",".join(data["mode_preference"])
 
     user.updated_at = datetime.now(timezone.utc).date()
-    db.session.commit()
+    database.session.commit()
 
     # map_selection, mode_preference 파싱 (DB에 JSON or CSV로 저장되었을 경우)
     map_selection = user.available_maps.split(",") if user.available_maps else []

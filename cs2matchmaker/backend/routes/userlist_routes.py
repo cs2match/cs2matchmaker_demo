@@ -1,7 +1,6 @@
-
 from flask import Blueprint, jsonify, request
-from extensions import db
-from models.player import Member
+from ..extensions import database
+from ..models.player import Member
 from sqlalchemy import or_
 
 userlist_bp = Blueprint('userlist_bp', __name__, url_prefix="/userlist")
@@ -27,7 +26,7 @@ def get_user_list():
         age = int(age)
 
     # 쿼리 빌드
-    query = db.session.query(Member)
+    query = database.session.query(Member)
 
     # 레이팅 필터
     if rating_min is not None and rating_max is not None:
