@@ -65,11 +65,12 @@ def chat_history():
         ).order_by(ChatMessage.timestamp).all()
 
         for msg in messages:
-            yield f"data: { { 
-                'senderId': msg.sender_id, 
+            data = {
+                'senderId': msg.sender_id,
                 'receiverId': msg.receiver_id,
                 'content': msg.content,
-                'date': msg.timestamp.astimezone(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
-            } }\n\n"
+                'date': msg.timestamp.strftime('%Y-%m-%d %H:%M:%S')
+            }
+            yield f"data: {data}\n\n"
 
     return Response(event_stream(), mimetype='text/event-stream')

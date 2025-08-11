@@ -7,18 +7,13 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="feat :chat_routes.py , chatlist_routes.py 분리해서 구현 &#10;&#10;ci : json 직렬화 내용 추가">
-      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="mysql 데이터소스 내용">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e523a13f-7942-433e-a3e0-249f4f90802b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e523a13f-7942-433e-a3e0-249f4f90802b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e523a13f-7942-433e-a3e0-249f4f90802b/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e523a13f-7942-433e-a3e0-249f4f90802b/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/extensions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/models/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/models/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/auth_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/user_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/user_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/userlist_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/userlist_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chat_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chat_routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,56 +71,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flask 서버.Flask (venv/Scripts/python.exe).executor": "Run",
-    "Flask 서버.Flask.executor": "Run",
-    "JavaScript 디버그.base.html.executor": "Run",
-    "JavaScript 디버그.index.html.executor": "Run",
-    "JavaScript 디버그.student.html.executor": "Run",
-    "Jest.App.test.js.executor": "Run",
-    "Jest.renders learn react link (1).executor": "Run",
-    "Jest.renders learn react link.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.App.js.executor": "Run",
-    "Node.js.MyComponent.js.executor": "Run",
-    "Node.js.index.js.executor": "Run",
-    "Node.js.setupTests.js.executor": "Run",
-    "Python.__init__.executor": "Coverage",
-    "Python.app.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.users.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/jyj36/IdeaProjects/Flask_test_world",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/Users/jyj36/IdeaProjects/Flask_test_world/cs2matchmaker/frontend/node_modules/react-scripts",
-    "nodejs_package_manager_path": "npm",
-    "npm.start.executor": "Run",
-    "npm.test.executor": "Run",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.1484716",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flask 서버.Flask (venv/Scripts/python.exe).executor&quot;: &quot;Run&quot;,
+    &quot;Flask 서버.Flask.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript 디버그.base.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript 디버그.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript 디버그.student.html.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.App.test.js.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.renders learn react link (1).executor&quot;: &quot;Run&quot;,
+    &quot;Jest.renders learn react link.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.MyComponent.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.setupTests.js.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Coverage&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.users.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jyj36/IdeaProjects/Flask_test_world&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/jyj36/IdeaProjects/Flask_test_world/cs2matchmaker/frontend/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;npm.test.executor&quot;: &quot;Run&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.1484716&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "tidb",
-      "postgresql",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;tidb&quot;,
+      &quot;postgresql&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -240,7 +235,8 @@
       <workItem from="1754882709754" duration="441000" />
       <workItem from="1754883358643" duration="331000" />
       <workItem from="1754883855525" duration="1753000" />
-      <workItem from="1754886427998" duration="6700000" />
+      <workItem from="1754886427998" duration="7117000" />
+      <workItem from="1754897936605" duration="4672000" />
     </task>
     <task id="LOCAL-00001" summary="EDIT: HTML -&gt; JSON 형식으로 수정">
       <option name="closed" value="true" />
@@ -410,7 +406,47 @@
       <option name="project" value="LOCAL" />
       <updated>1754894550678</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="style : db -&gt; database(명사 수정)">
+      <option name="closed" value="true" />
+      <created>1754894630416</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1754894630416</updated>
+    </task>
+    <task id="LOCAL-00023" summary="refactor : tidb mysql-&gt; 우분투 mysql로 수정시 필요한 db_name 미지정">
+      <option name="closed" value="true" />
+      <created>1754894835770</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1754894835770</updated>
+    </task>
+    <task id="LOCAL-00024" summary="style : db -&gt; database">
+      <option name="closed" value="true" />
+      <created>1754894897178</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1754894897178</updated>
+    </task>
+    <task id="LOCAL-00025" summary="style : 경로명 상대경로로 변경">
+      <option name="closed" value="true" />
+      <created>1754894940385</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1754894940385</updated>
+    </task>
+    <task id="LOCAL-00026" summary="mysql 데이터소스 내용">
+      <option name="closed" value="true" />
+      <created>1754894978231</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1754894978231</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +480,12 @@
     <MESSAGE value="fix : 절대 -&gt; 상대경로 수정" />
     <MESSAGE value="chore : .pem 내용 제거 (mysql로 변경)" />
     <MESSAGE value="feat :chat_routes.py , chatlist_routes.py 분리해서 구현 &#10;&#10;ci : json 직렬화 내용 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat :chat_routes.py , chatlist_routes.py 분리해서 구현 &#10;&#10;ci : json 직렬화 내용 추가" />
+    <MESSAGE value="style : db -&gt; database(명사 수정)" />
+    <MESSAGE value="refactor : tidb mysql-&gt; 우분투 mysql로 수정시 필요한 db_name 미지정" />
+    <MESSAGE value="style : db -&gt; database" />
+    <MESSAGE value="style : 경로명 상대경로로 변경" />
+    <MESSAGE value="mysql 데이터소스 내용" />
+    <option name="LAST_COMMIT_MESSAGE" value="mysql 데이터소스 내용" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -459,7 +500,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ca_pem$Flask__venv_Scripts_python_exe_.coverage" NAME="Flask (venv/Scripts/python.exe) 커버리지 결과" MODIFIED="1754284683596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
-    <SUITE FILE_PATH="coverage/ca_pem$app.coverage" NAME="app 커버리지 결과" MODIFIED="1754894177690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
+    <SUITE FILE_PATH="coverage/ca_pem$app.coverage" NAME="app 커버리지 결과" MODIFIED="1754899723324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
     <SUITE FILE_PATH="coverage/Flask_test_world$Flask.coverage" NAME="Flask 커버리지 결과" MODIFIED="1751946730369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ca_pem$Flask.coverage" NAME="Flask (venv/Scripts/python.exe) 커버리지 결과" MODIFIED="1754255594387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />
     <SUITE FILE_PATH="coverage/Flask_test_world$app.coverage" NAME="app 커버리지 결과" MODIFIED="1753265293602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cs2matchmaker/backend" />

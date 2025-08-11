@@ -18,4 +18,4 @@ if __name__ == '__main__':
     print("Full DB URI:", Config.SQLALCHEMY_DATABASE_URI)
 
     # 외부 접근 허용, 디버그 모드 실행
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=7080, debug=True)
