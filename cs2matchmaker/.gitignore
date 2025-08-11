@@ -25,5 +25,4 @@ yarn-error.log*
 
 # SSL 비밀폴더 및 인증서 자체 무시
 .ssl/
-*.pem
 *.key
