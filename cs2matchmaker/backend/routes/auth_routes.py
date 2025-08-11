@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from cs2matchmaker.backend.extensions import db
+from cs2matchmaker.backend.extensions import database
 from cs2matchmaker.backend.models.player import Member  # 모델 임포트 경로 확인 필요
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
@@ -36,8 +36,8 @@ def register():
         age=age,
         joined_at=datetime.date.today()
     )
-    db.session.add(member)
-    db.session.commit()
+    database.session.add(member)
+    database.session.commit()
 
     return jsonify({
         "id": member.id,
