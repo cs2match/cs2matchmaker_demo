@@ -37,7 +37,8 @@ def create_app():
     # 기본 라우트 (서버 정상 여부 확인용)
     @app.route("/")
     def index():
-        return "Flask + TiDB + SQLAlchemy 연결 OK!"
+        return ("Flask + TiDB + SQLAlchemy 연결 OK!\n"
+                "http연결 까지 성공하였습니다!")
 
     # DB 이름이 없거나 별도 지정 시 사용
     db_name = Config.SQLALCHEMY_DATABASE_URI.split('/')[-1].split('?')[0] if '/' in Config.SQLALCHEMY_DATABASE_URI else None

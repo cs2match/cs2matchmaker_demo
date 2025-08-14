@@ -7,13 +7,15 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="mysql 데이터소스 내용">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e523a13f-7942-433e-a3e0-249f4f90802b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e523a13f-7942-433e-a3e0-249f4f90802b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e523a13f-7942-433e-a3e0-249f4f90802b/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e523a13f-7942-433e-a3e0-249f4f90802b/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="feat : 서버 변경 시작">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__8__4___5_27__________.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__8__4__오후_5_27,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chat_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chat_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/models/chat_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/models/chat_message.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +238,10 @@
       <workItem from="1754883358643" duration="331000" />
       <workItem from="1754883855525" duration="1753000" />
       <workItem from="1754886427998" duration="7117000" />
-      <workItem from="1754897936605" duration="4672000" />
+      <workItem from="1754897936605" duration="6810000" />
+      <workItem from="1754908389921" duration="4646000" />
+      <workItem from="1754919796744" duration="3054000" />
+      <workItem from="1755180597685" duration="14165000" />
     </task>
     <task id="LOCAL-00001" summary="EDIT: HTML -&gt; JSON 형식으로 수정">
       <option name="closed" value="true" />
@@ -446,7 +451,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754894978231</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat : 서버 변경 시작">
+      <option name="closed" value="true" />
+      <created>1754904860044</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1754904860044</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +498,8 @@
     <MESSAGE value="style : db -&gt; database" />
     <MESSAGE value="style : 경로명 상대경로로 변경" />
     <MESSAGE value="mysql 데이터소스 내용" />
-    <option name="LAST_COMMIT_MESSAGE" value="mysql 데이터소스 내용" />
+    <MESSAGE value="feat : 서버 변경 시작" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 서버 변경 시작" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
