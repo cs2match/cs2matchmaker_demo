@@ -47,9 +47,21 @@ def update_user(user_id):
     user.age = data.get("age", user.age)
     # 리스트는 JSON 문자열로 저장되어 있을 수 있으니 파싱
     if "map_selection" in data:
-        user.available_maps = ",".join(data["map_selection"])
+        ms = data["map_selection"]
+        if isinstance(ms, list):
+            user.available_maps = ",".join(str(x) for x in ms)
+        elif ms is None:
+            user.available_maps = ""
+        else:
+            user.available_maps = str(ms)
     if "mode_preference" in data:
-        user.preferred_modes = ",".join(data["mode_preference"])
+        mp = data["mode_preference"]
+        if isinstance(mp, list):
+            user.preferred_modes = ",".join(str(x) for x in mp)
+        elif mp is None:
+            user.preferred_modes = ""
+        else:
+            user.preferred_modes = str(mp)
 
     user.updated_at = datetime.now(timezone.utc).date()
     database.session.commit()
