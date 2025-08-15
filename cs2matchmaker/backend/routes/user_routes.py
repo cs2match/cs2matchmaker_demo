@@ -15,9 +15,15 @@ def get_user(user_id):
     return jsonify({
         "id": user.id,
         "email": user.email,
-        "nickname": user.nickname,
+        "name": user.nickname,
         "premier_rating": user.premier_rating,
-        # etc.
+        "fivewin_rating": user.fivewin_rating,
+        "faceit_rating": user.faceit_rating,
+        "bestfive_rating": user.bestfive_rating,
+        "map_selection": user.available_maps.split(",") if user.available_maps else [],
+        "mode_preference": user.preferred_modes.split(",") if user.preferred_modes else [],
+        "age": user.age,
+        "date": user.updated_at.isoformat() + "T00:00:00.000Z" if user.updated_at else None
     }), 200
 
 #유저정보를 갱신 API (단 해당 유저일 경우에만 사용할 수 있게하기) : 토큰 확인 후 본인일 경우에만 가능
@@ -34,7 +40,7 @@ def update_user(user_id):
 
     data = request.get_json()
     user.premier_rating = data.get("premier_rating", user.premier_rating)
-    user.fivewin_rating = data.get("5win_rating", user.fivewin_rating)
+    user.fivewin_rating = data.get("fivewin_rating", user.fivewin_rating)
     user.faceit_rating = data.get("faceit_rating", user.faceit_rating)
     user.bestfive_rating = data.get("bestfive_rating", user.bestfive_rating)
     user.nickname = data.get("name", user.nickname)
