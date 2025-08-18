@@ -19,3 +19,6 @@ class Config:
     JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
     if JWT_SECRET_KEY is None:
         raise ValueError("JWT_SECRET_KEY 환경변수가 필요합니다.")
+
+# 추가로 flask-sse를 위한 Redis URL 설정 권장 (선택 사항, redis 사용 시)
+    SSE_REDIS_URL = os.getenv('SSE_REDIS_URL', 'redis://localhost:6379/0')
