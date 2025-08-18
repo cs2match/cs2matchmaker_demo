@@ -5,16 +5,18 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from ..extensions import database
 from ..models.chat_message import ChatMessage
 from datetime import datetime, timezone  # timezone import
+import json
 
 chat_bp = Blueprint('chat', __name__)
 
 # 채팅 발송 API - POST /chat
 @chat_bp.route('', methods=['POST'])
 @jwt_required()
+
 def send_message():
-    sender_id = get_jwt_identity()
+    sender_id = int(get_jwt_identity())
     data = request.get_json()
-    receiver_id = data.get('receiverId')
+    receiver_id = int(data.get('receiverId'))
     content = data.get('content')
 
     if not receiver_id or not content:
@@ -71,6 +73,6 @@ def chat_history():
                 'content': msg.content,
                 'date': msg.timestamp.strftime('%Y-%m-%d %H:%M:%S')
             }
-            yield f"data: {data}\n\n"
+            yield f"data: {json.dumps(data)}\n\n"
 
     return Response(event_stream(), mimetype='text/event-stream')
