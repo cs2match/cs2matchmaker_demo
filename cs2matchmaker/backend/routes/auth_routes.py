@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, current_app
 from cs2matchmaker.backend.extensions import database
 from cs2matchmaker.backend.models.player import Member  # 모델 임포트 경로 확인 필요
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -59,21 +59,28 @@ def duplicate_check():
 # 로그인 API
 @auth_bp.route('/login', methods=['POST'])
 def login():
-    data = request.get_json()
-    email = data.get('email')
-    password = data.get('password')
+    try:
+        data = request.get_json()
+        email = data.get('email')
+        password = data.get('password')
 
-    if not email or not password:
-        return jsonify({"error": "Email and password required"}), 400
+        if not email or not password:
+            return jsonify({"error": "Email and password required"}), 400
 
-    user = Member.query.filter_by(email=email).first()
-    if not user or not check_password_hash(user.password, password):
-        return jsonify({"isSuccess": False}), 401
+        user = Member.query.filter_by(email=email).first()
+        if not user or not check_password_hash(user.password, password):
+            return jsonify({"isSuccess": False}), 401
 
-    access_token = create_access_token(identity=str(user.id), expires_delta=timedelta(hours=1))
+        # 서버 config 우선 만료 지정
+        current_app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)
+        access_token = create_access_token(identity=str(user.id), expires_delta=timedelta(hours=1))
 
-    return jsonify({
-        "isSuccess": True,
-        "access_token": access_token,
-        "user_id": user.id,
-    }), 200
+        return jsonify({
+            "isSuccess": True,
+            "access_token": access_token,
+            "user_id": user.id,
+        }), 200
+
+    except Exception as e:
+        current_app.logger.exception(e)
+        return jsonify({"error": "Server error"}), 500

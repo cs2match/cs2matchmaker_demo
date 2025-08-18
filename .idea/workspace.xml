@@ -7,11 +7,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="feat : 타입 일치, event_stream 직렬화">
+    <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="# 추가로 flask-sse를 위한 Redis URL 설정 권장 (선택 사항, redis 사용 시)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chat_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chat_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chatlist_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chatlist_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/auth_routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +240,7 @@
       <workItem from="1755243519844" duration="3496000" />
       <workItem from="1755349524859" duration="15450000" />
       <workItem from="1755435566015" duration="1385000" />
-      <workItem from="1755476110058" duration="8977000" />
+      <workItem from="1755476110058" duration="9937000" />
     </task>
     <task id="LOCAL-00001" summary="EDIT: HTML -&gt; JSON 형식으로 수정">
       <option name="closed" value="true" />
@@ -508,7 +506,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755483648938</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="날짜 포맷 완전 통일(YYYY-MM-DDTHH:MM:SSZ)&#10;&#10;리스트 쿼리 페이징 지원(limit, offset)&#10;&#10;쿼리/스트림 예외처리, 로거/에러메시지&#10;&#10;SSE stream keepalive&#10;&#10;채널 네이밍 통일성 강화">
+      <option name="closed" value="true" />
+      <created>1755486561098</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1755486561098</updated>
+    </task>
+    <task id="LOCAL-00035" summary="# 추가로 flask-sse를 위한 Redis URL 설정 권장 (선택 사항, redis 사용 시)">
+      <option name="closed" value="true" />
+      <created>1755486584237</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1755486584238</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,8 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="EDIT: HTML -&gt; JSON 형식으로 수정" />
-    <MESSAGE value="EDIT: frontend -&gt; react, backend -&gt; flask 환경 구축" />
     <MESSAGE value="fix&#9;: db,jws import error fix.&#10;&#10;chore : 가상 환경 변수 tidb sqlalchemy ORM 환경 구축" />
     <MESSAGE value="add : react 내용 삭제" />
     <MESSAGE value="delete : React 삭제" />
@@ -551,7 +563,9 @@
     <MESSAGE value="feat : 우분투 서버 연결 완료!" />
     <MESSAGE value="feat : /login시 user_id 반환 &#10;test : JWT 토큰사용 되는 API 테스트 및 문제해결" />
     <MESSAGE value="feat : 타입 일치, event_stream 직렬화" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 타입 일치, event_stream 직렬화" />
+    <MESSAGE value="날짜 포맷 완전 통일(YYYY-MM-DDTHH:MM:SSZ)&#10;&#10;리스트 쿼리 페이징 지원(limit, offset)&#10;&#10;쿼리/스트림 예외처리, 로거/에러메시지&#10;&#10;SSE stream keepalive&#10;&#10;채널 네이밍 통일성 강화" />
+    <MESSAGE value="# 추가로 flask-sse를 위한 Redis URL 설정 권장 (선택 사항, redis 사용 시)" />
+    <option name="LAST_COMMIT_MESSAGE" value="# 추가로 flask-sse를 위한 Redis URL 설정 권장 (선택 사항, redis 사용 시)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
