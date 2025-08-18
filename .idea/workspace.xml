@@ -9,8 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45a6fb57-93bf-4533-9b8c-7a11e11aac85" name="변경" comment="feat : /login시 user_id 반환 &#10;test : JWT 토큰사용 되는 API 테스트 및 문제해결">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/auth_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/userlist_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/userlist_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chatlist_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/cs2matchmaker/backend/routes/chatlist_routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -240,7 +240,7 @@
       <workItem from="1755243519844" duration="3496000" />
       <workItem from="1755349524859" duration="15450000" />
       <workItem from="1755435566015" duration="1385000" />
-      <workItem from="1755476110058" duration="3976000" />
+      <workItem from="1755476110058" duration="5145000" />
     </task>
     <task id="LOCAL-00001" summary="EDIT: HTML -&gt; JSON 형식으로 수정">
       <option name="closed" value="true" />
@@ -482,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755361119804</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat : /login시 user_id 반환 &#10;test : JWT 토큰사용 되는 API 테스트 및 문제해결">
+      <option name="closed" value="true" />
+      <created>1755481439982</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1755481439982</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

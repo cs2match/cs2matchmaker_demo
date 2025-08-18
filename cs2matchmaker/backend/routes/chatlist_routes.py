@@ -12,14 +12,17 @@ chatlist_bp = Blueprint('chatlist', __name__, url_prefix='/chatlist')
 @chatlist_bp.route('', methods=['POST'])
 @jwt_required()
 def chat_list():
-    current_user_id = get_jwt_identity()
+    # JWT에서 가져온 identity 값을 정수형으로 변환
+    current_user_id = int(get_jwt_identity())
     data = request.get_json() or {}
-    requested_user_id = data.get('id', current_user_id)
+    # 요청 데이터의 id 역시 정수형으로 변환, 없으면 current_user_id 기본값 사용
+    requested_user_id = int(data.get('id', current_user_id))
 
-    if int(requested_user_id) != current_user_id:
+    # 타입이 통일되어 정확한 비교 가능
+    if requested_user_id != current_user_id:
         return jsonify({'error': 'Unauthorized access'}), 403
 
-    # 상대방 ID, 마지막 메시지 시간 조회
+    # 이하 쿼리 등 기존 코드 유지
     subquery = (
         database.session.query(
             func.IF(
@@ -39,7 +42,6 @@ def chat_list():
         .subquery()
     )
 
-    # User 테이블 조인해서 상대방 닉네임 가져오기
     results = (
         database.session.query(
             Member.id,
