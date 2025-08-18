@@ -5,6 +5,7 @@ from sqlalchemy import or_
 
 userlist_bp = Blueprint('userlist_bp', __name__, url_prefix="/userlist")
 
+@userlist_bp.route("", methods=["POST"])
 @userlist_bp.route("/", methods=["POST"])
 def get_user_list():
     data = request.get_json()

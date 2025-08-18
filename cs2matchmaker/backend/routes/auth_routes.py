@@ -3,7 +3,7 @@ from cs2matchmaker.backend.extensions import database
 from cs2matchmaker.backend.models.player import Member  # 모델 임포트 경로 확인 필요
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
-import datetime
+from datetime import timedelta, datetime
 
 auth_bp = Blueprint('auth', __name__, url_prefix='/user')
 
@@ -23,7 +23,6 @@ def register():
     if None in (name, email, password, age):
         return jsonify({"error": "Missing required fields"}), 400
 
-    # 이메일 중복 체크
     if Member.query.filter_by(email=email).first():
         return jsonify({"error": "Email already registered"}), 409
 
@@ -34,7 +33,7 @@ def register():
         password=hashed_pw,
         available_maps=",".join(map_selection) if isinstance(map_selection, list) else "",
         age=age,
-        joined_at=datetime.date.today()
+        joined_at=datetime.today().date()
     )
     database.session.add(member)
     database.session.commit()
@@ -71,10 +70,8 @@ def login():
     if not user or not check_password_hash(user.password, password):
         return jsonify({"isSuccess": False}), 401
 
-    #토큰 발행(1시간 유효)
-    access_token = create_access_token(identity=user.id, expires_delta=datetime.timedelta(hours=1))
+    access_token = create_access_token(identity=str(user.id), expires_delta=timedelta(hours=1))
 
-    #로그인 성공 시 user_id도 함께 반환
     return jsonify({
         "isSuccess": True,
         "access_token": access_token,
