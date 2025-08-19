@@ -30,6 +30,8 @@ class Member(database.Model):
             "age": self.age,
             "premier_rating": self.premier_rating,
             "faceit_rating": self.faceit_rating,
+            "fivewin_rating": self.fivewin_rating,         # 추가
+            "bestfive_rating": self.bestfive_rating,       # 추가
             "available_maps": self.available_maps.split(",") if self.available_maps else [],
             "preferred_modes": self.preferred_modes.split(",") if self.preferred_modes else [],
             "server": self.server,
