@@ -33,14 +33,14 @@ def get_user_list():
     if rating_min is not None and rating_max is not None:
         query = query.filter(Member.premier_rating.between(rating_min, rating_max))
 
-    # 맵 필터
+    # 맵 필터 (available_maps -> map_selection)
     if map_selection:
-        map_conditions = [Member.available_maps.like(f"%{m}%") for m in map_selection]
+        map_conditions = [Member.map_selection.like(f"%{m}%") for m in map_selection]
         query = query.filter(or_(*map_conditions))
 
-    # 모드 필터
+    # 모드 필터 (preferred_modes -> mode_preference)
     if mode_preference:
-        mode_conditions = [Member.preferred_modes.like(f"%{m}%") for m in mode_preference]
+        mode_conditions = [Member.mode_preference.like(f"%{m}%") for m in mode_preference]
         query = query.filter(or_(*mode_conditions))
 
     # 나이 필터
@@ -53,4 +53,11 @@ def get_user_list():
 
     users = query.all()
 
-    return jsonify([u.serialize() for u in users]), 200
+    # nickname -> name, updated_at -> date
+    def serialize_user(u):
+        data = u.serialize()
+        data["name"] = data.pop("nickname", None)
+        data["date"] = data.pop("updated_at", None)
+        return data
+
+    return jsonify([serialize_user(u) for u in users]), 200
